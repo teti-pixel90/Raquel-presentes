@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produto - Raquel Presentes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img
+        src="Img/logo.png"
+        alt="Raquel Presentes"
+        class="logo"
+    >
+</header>
+
+
+<nav class="menu">
+
+    <a href="index.html">
+        Início
+    </a>
+
+    <a href="index.html#produtos">
+        Produtos
+    </a>
+
+    <a href="carrinho.html">
+        Carrinho 🛒
+        (<span id="contador-carrinho">0</span>)
+    </a>
+
+</nav>
+
+
+<section class="pagina-produto">
+
+
+    <div class="produto-detalhe-card">
+
+
+        <div class="produto-detalhe-imagem">
+
+            <span class="selo-disponivel produto-selo-detalhe">
+                Disponível
+            </span>
+
+            <img
+                id="produto-imagem"
+                src=""
+                alt="Produto"
+                class="foto-produto"
+            >
+
+        </div>
+
+
+        <div class="produto-detalhe-info">
+
+            <span class="produto-marca">
+                ❤️ Raquel Presentes
+            </span>
+
+            <h1 id="produto-nome">
+                Produto
+            </h1>
+
+            <p
+                id="produto-preco"
+                class="preco produto-preco-detalhe"
+            ></p>
+
+            <p
+                id="produto-descricao"
+                class="descricao"
+            ></p>
+
+
+            <div
+                id="area-cor"
+                class="opcao-produto"
+                style="display: none;"
+            >
+
+                <label for="produto-cor">
+                    Escolha a cor
+                </label>
+
+                <select id="produto-cor">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="area-tamanho"
+                class="opcao-produto"
+                style="display: none;"
+            >
+
+                <label for="produto-tamanho">
+                    Escolha o tamanho
+                </label>
+
+                <select id="produto-tamanho">
+
+                    <option value="">
+                        Selecione
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                id="adicionar-carrinho"
+                class="btn-carrinho"
+                onclick="adicionarAoCarrinho()"
+            >
+                🛒 Adicionar ao carrinho
+            </button>
+
+
+            <a
+                id="produto-whatsapp"
+                href="#"
+                class="btn-whatsapp"
+            >
+                💬 Comprar pelo WhatsApp
+            </a>
+
+
+            <div class="produto-beneficios">
+
+                <div>
+                    <span>🛍️</span>
+
+                    <p>
+                        Compra fácil
+                    </p>
+                </div>
+
+
+                <div>
+                    <span>💬</span>
+
+                    <p>
+                        Atendimento pelo WhatsApp
+                    </p>
+                </div>
+
+
+                <div>
+                    <span>❤️</span>
+
+                    <p>
+                        Atendimento com carinho
+                    </p>
+                </div>
+
+            </div>
+
+
+            <a
+                href="index.html#produtos"
+                class="voltar-loja"
+            >
+                ← Voltar para os produtos
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>
+        Raquel Presentes
+    </h3>
+
+    <p>
+        Seja sua melhor versão ❤️
+    </p>
+
+    <a
+        href="https://wa.me/5518997644881"
+        target="_blank"
+    >
+        Fale conosco pelo WhatsApp
+    </a>
+
+    <p class="copyright">
+        © 2026 Raquel Presentes
+    </p>
+
+</footer>
+
+
+<script src="scripts.js"></script>
+
+</body>
+
+</html>

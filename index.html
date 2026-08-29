@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raquel Presentes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img
+        src="Img/logo.png"
+        alt="Raquel Presentes"
+        class="logo"
+    >
+</header>
+
+
+<nav class="menu">
+
+    <a href="index.html">
+        Início
+    </a>
+
+    <a href="#produtos">
+        Produtos
+    </a>
+
+    <a href="carrinho.html">
+        Carrinho 🛒
+        (<span id="contador-carrinho">0</span>)
+    </a>
+
+</nav>
+
+
+<section class="banner-principal">
+
+    <div class="banner-conteudo">
+
+        <span class="banner-selo">
+            ✨ Novidades na loja
+        </span>
+
+        <h1>
+            Encontre o presente perfeito ❤️
+        </h1>
+
+        <p>
+            Roupas, acessórios, brinquedos,
+            eletrônicos e muito mais.
+        </p>
+
+        <a
+            href="#produtos"
+            class="banner-botao"
+        >
+            Ver produtos
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="secao-categorias">
+
+    <h2>
+        Nossas categorias
+    </h2>
+
+    <p class="subtitulo-secao">
+        Escolha uma categoria ou encontre o que procura.
+    </p>
+
+
+    <input
+        type="text"
+        id="busca"
+        placeholder="🔎 Buscar produto..."
+        onkeyup="buscarProdutos()"
+    >
+
+
+    <div class="categorias">
+
+        <button onclick="filtrarProdutos('roupas')">
+            👕 Roupas
+        </button>
+
+        <button onclick="filtrarProdutos('bones')">
+            🧢 Bonés
+        </button>
+
+        <button onclick="filtrarProdutos('brinquedos')">
+            🧸 Brinquedos
+        </button>
+
+        <button onclick="filtrarProdutos('eletronicos')">
+            🎧 Eletrônicos
+        </button>
+
+        <button onclick="filtrarProdutos('todos')">
+            ✨ Todos
+        </button>
+
+    </div>
+
+</section>
+
+
+<section
+    class="destaques"
+    id="produtos"
+>
+
+    <div class="titulo-produtos">
+
+        <span>
+            ❤️ Raquel Presentes
+        </span>
+
+        <h2>
+            Produtos em destaque
+        </h2>
+
+        <p>
+            Escolha seu favorito e faça seu pedido.
+        </p>
+
+    </div>
+
+
+    <!--
+        OS PRODUTOS SERÃO CRIADOS
+        AUTOMATICAMENTE PELO JAVASCRIPT
+    -->
+
+    <div
+        class="produtos"
+        id="lista-produtos"
+    ></div>
+
+</section>
+
+
+<section class="vantagens">
+
+    <div class="vantagem">
+
+        <span>
+            💬
+        </span>
+
+        <h3>
+            Atendimento fácil
+        </h3>
+
+        <p>
+            Finalize seu pedido diretamente pelo WhatsApp.
+        </p>
+
+    </div>
+
+
+    <div class="vantagem">
+
+        <span>
+            🛍️
+        </span>
+
+        <h3>
+            Várias opções
+        </h3>
+
+        <p>
+            Presentes para diferentes momentos e estilos.
+        </p>
+
+    </div>
+
+
+    <div class="vantagem">
+
+        <span>
+            ❤️
+        </span>
+
+        <h3>
+            Feito com carinho
+        </h3>
+
+        <p>
+            Seja sua melhor versão com a Raquel Presentes.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>
+        Raquel Presentes
+    </h3>
+
+    <p>
+        Seja sua melhor versão ❤️
+    </p>
+
+    <a
+        href="https://wa.me/5518997644881"
+        target="_blank"
+    >
+        Fale conosco pelo WhatsApp
+    </a>
+
+    <p class="copyright">
+        © 2026 Raquel Presentes
+    </p>
+
+</footer>
+
+
+<script src="scripts.js"></script>
+
+</body>
+
+</html>
