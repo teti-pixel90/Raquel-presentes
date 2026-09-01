@@ -117,6 +117,29 @@ function produtoDisponivel(produto) {
 
 
 /* =====================================================
+   ACESSO AO CARRINHO (localStorage)
+===================================================== */
+
+function obterCarrinho() {
+
+    return JSON.parse(
+        localStorage.getItem("carrinho")
+    ) || [];
+
+}
+
+
+function salvarCarrinho(carrinho) {
+
+    localStorage.setItem(
+        "carrinho",
+        JSON.stringify(carrinho)
+    );
+
+}
+
+
+/* =====================================================
    PRODUTOS DA HOME
 ===================================================== */
 
@@ -965,11 +988,7 @@ function adicionarAoCarrinho() {
 
 
     let carrinho =
-        JSON.parse(
-            localStorage.getItem(
-                "carrinho"
-            )
-        ) || [];
+        obterCarrinho();
 
 
     const produtoExistente =
@@ -1012,12 +1031,7 @@ function adicionarAoCarrinho() {
     }
 
 
-    localStorage.setItem(
-        "carrinho",
-        JSON.stringify(
-            carrinho
-        )
-    );
+    salvarCarrinho(carrinho);
 
 
     atualizarContadorCarrinho();
@@ -1070,11 +1084,7 @@ function carregarCarrinho() {
 
 
     const carrinho =
-        JSON.parse(
-            localStorage.getItem(
-                "carrinho"
-            )
-        ) || [];
+        obterCarrinho();
 
 
     listaCarrinho.innerHTML =
@@ -1411,11 +1421,7 @@ function finalizarPedido(event) {
 
 
     const carrinho =
-        JSON.parse(
-            localStorage.getItem(
-                "carrinho"
-            )
-        ) || [];
+        obterCarrinho();
 
 
     if (!carrinho.length) {
@@ -1722,11 +1728,7 @@ function alterarQuantidade(
 ) {
 
     let carrinho =
-        JSON.parse(
-            localStorage.getItem(
-                "carrinho"
-            )
-        ) || [];
+        obterCarrinho();
 
 
     if (!carrinho[indice]) {
@@ -1751,12 +1753,7 @@ function alterarQuantidade(
     }
 
 
-    localStorage.setItem(
-        "carrinho",
-        JSON.stringify(
-            carrinho
-        )
-    );
+    salvarCarrinho(carrinho);
 
 
     carregarCarrinho();
@@ -1773,11 +1770,7 @@ function alterarQuantidade(
 function removerDoCarrinho(indice) {
 
     let carrinho =
-        JSON.parse(
-            localStorage.getItem(
-                "carrinho"
-            )
-        ) || [];
+        obterCarrinho();
 
 
     carrinho.splice(
@@ -1786,12 +1779,7 @@ function removerDoCarrinho(indice) {
     );
 
 
-    localStorage.setItem(
-        "carrinho",
-        JSON.stringify(
-            carrinho
-        )
-    );
+    salvarCarrinho(carrinho);
 
 
     carregarCarrinho();
@@ -1819,11 +1807,7 @@ function atualizarContadorCarrinho() {
 
 
     const carrinho =
-        JSON.parse(
-            localStorage.getItem(
-                "carrinho"
-            )
-        ) || [];
+        obterCarrinho();
 
 
     let quantidade = 0;

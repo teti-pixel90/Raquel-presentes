@@ -1,3 +1,12 @@
+:root {
+    --cor-principal: #b76e79;
+    --cor-dourada: #d4a853;
+    --cor-texto: #4a302b;
+    --cor-titulo: #6f443d;
+    --cor-borda: #ead7c9;
+    --cor-fundo: #fffaf8;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,8 +19,8 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: #fffaf8;
-    color: #4a302b;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
     text-align: center;
 }
 
@@ -23,8 +32,8 @@ body {
 header {
     background: linear-gradient(
         90deg,
-        #b76e79,
-        #d4a853
+        var(--cor-principal),
+        var(--cor-dourada)
     );
 
     padding: 14px;
@@ -57,7 +66,7 @@ header {
     background: white;
 
     border-bottom:
-        1px solid #ead7c9;
+        1px solid var(--cor-borda);
 
     position: sticky;
     top: 0;
@@ -96,7 +105,7 @@ header {
         linear-gradient(
             135deg,
             #fff2ed,
-            #fffaf8,
+            var(--cor-fundo),
             #f9ead6
         );
 }
@@ -113,9 +122,9 @@ header {
 
     background: white;
 
-    color: #b76e79;
+    color: var(--cor-principal);
 
-    border: 1px solid #ead7c9;
+    border: 1px solid var(--cor-borda);
 
     border-radius: 999px;
 
@@ -136,7 +145,7 @@ header {
 
     line-height: 1.15;
 
-    color: #6f443d;
+    color: var(--cor-titulo);
 
     margin-bottom: 14px;
 }
@@ -160,7 +169,7 @@ header {
     background:
         linear-gradient(
             90deg,
-            #b76e79,
+            var(--cor-principal),
             #c88978
         );
 
@@ -223,7 +232,7 @@ header {
         10px 0 16px;
 
     border:
-        2px solid #d4a853;
+        2px solid var(--cor-dourada);
 
     border-radius: 14px;
 
@@ -237,7 +246,7 @@ header {
 }
 
 #busca:focus {
-    border-color: #b76e79;
+    border-color: var(--cor-principal);
 
     box-shadow:
         0 0 0 3px rgba(183, 110, 121, 0.12);
@@ -262,7 +271,7 @@ button {
     color: #9b5c51;
 
     border:
-        2px solid #d4a853;
+        2px solid var(--cor-dourada);
 
     border-radius: 12px;
 
@@ -304,7 +313,7 @@ button:active {
 .titulo-produtos span {
     display: block;
 
-    color: #b76e79;
+    color: var(--cor-principal);
 
     font-size: 14px;
 
@@ -314,7 +323,7 @@ button:active {
 }
 
 .titulo-produtos h2 {
-    color: #6f443d;
+    color: var(--cor-titulo);
 
     margin-bottom: 8px;
 }
@@ -341,98 +350,9 @@ button:active {
 
 /* =========================
    CARD DO PRODUTO
+   (regras de layout do card estão em
+   "CARDS DE PRODUTO MELHORADOS", mais abaixo)
 ========================= */
-
-.produto {
-    background: white;
-
-    border:
-        1px solid #ead7c9;
-
-    border-radius: 18px;
-
-    padding: 10px;
-
-    box-shadow:
-        0 4px 14px rgba(0, 0, 0, 0.08);
-
-    overflow: hidden;
-
-    transition: 0.2s;
-}
-
-.produto:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.11);
-}
-
-.produto-imagem-area {
-    position: relative;
-}
-
-.produto img {
-    width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    object-fit: cover;
-
-    border-radius: 13px;
-}
-
-.selo-disponivel {
-    position: absolute;
-
-    top: 8px;
-    left: 8px;
-
-    z-index: 2;
-
-    background: rgba(
-        255,
-        255,
-        255,
-        0.95
-    );
-
-    color: #4f8a59;
-
-    padding: 6px 9px;
-
-    border-radius: 999px;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.produto h3 {
-    margin:
-        12px 0 5px;
-
-    font-size: 16px;
-
-    min-height: 38px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.produto-categoria {
-    color: #9b817a;
-
-    font-size: 13px;
-
-    margin-bottom: 8px;
-}
 
 .preco {
     margin:
@@ -442,7 +362,7 @@ button:active {
 
     font-weight: bold;
 
-    color: #b76e79;
+    color: var(--cor-principal);
 }
 
 
@@ -460,7 +380,7 @@ button:active {
     color: #9b5c51;
 
     border:
-        2px solid #d4a853;
+        2px solid var(--cor-dourada);
 
     border-radius: 12px;
 
@@ -502,7 +422,7 @@ button:active {
     background: white;
 
     border:
-        1px solid #ead7c9;
+        1px solid var(--cor-borda);
 
     border-radius: 16px;
 
@@ -521,7 +441,7 @@ button:active {
 }
 
 .vantagem h3 {
-    color: #6f443d;
+    color: var(--cor-titulo);
 
     margin-bottom: 8px;
 }
@@ -567,7 +487,7 @@ button:active {
 .pagina-produto h1 {
     font-size: 26px;
 
-    color: #4a302b;
+    color: var(--cor-texto);
 
     margin-bottom: 10px;
 }
@@ -600,7 +520,7 @@ button:active {
 
     font-weight: bold;
 
-    color: #4a302b;
+    color: var(--cor-texto);
 }
 
 .opcao-produto select {
@@ -609,13 +529,13 @@ button:active {
     padding: 13px;
 
     border:
-        2px solid #d4a853;
+        2px solid var(--cor-dourada);
 
     border-radius: 12px;
 
     background: white;
 
-    color: #4a302b;
+    color: var(--cor-texto);
 
     font-size: 16px;
 
@@ -623,7 +543,7 @@ button:active {
 }
 
 .opcao-produto select:focus {
-    border-color: #b76e79;
+    border-color: var(--cor-principal);
 }
 
 
@@ -639,7 +559,7 @@ button:active {
     background:
         linear-gradient(
             90deg,
-            #b76e79,
+            var(--cor-principal),
             #c88b7b
         );
 
@@ -709,7 +629,7 @@ button:active {
 .pagina-carrinho h1 {
     margin-bottom: 25px;
 
-    color: #4a302b;
+    color: var(--cor-texto);
 }
 
 .item-carrinho {
@@ -722,7 +642,7 @@ button:active {
     background: white;
 
     border:
-        1px solid #ead7c9;
+        1px solid var(--cor-borda);
 
     border-radius: 16px;
 
@@ -823,7 +743,7 @@ button:active {
 
     font-size: 23px;
 
-    color: #6f443d;
+    color: var(--cor-titulo);
 }
 
 
@@ -835,7 +755,7 @@ button:active {
     background: white;
 
     border:
-        1px solid #ead7c9;
+        1px solid var(--cor-borda);
 
     border-radius: 16px;
 
@@ -855,7 +775,7 @@ button:active {
 
     margin-bottom: 20px;
 
-    color: #6f443d;
+    color: var(--cor-titulo);
 }
 
 .dados-pedido label {
@@ -866,7 +786,7 @@ button:active {
 
     font-weight: bold;
 
-    color: #4a302b;
+    color: var(--cor-texto);
 }
 
 .dados-pedido input,
@@ -876,13 +796,13 @@ button:active {
     padding: 13px;
 
     border:
-        2px solid #d4a853;
+        2px solid var(--cor-dourada);
 
     border-radius: 12px;
 
     background: white;
 
-    color: #4a302b;
+    color: var(--cor-texto);
 
     font-size: 16px;
 
@@ -891,7 +811,7 @@ button:active {
 
 .dados-pedido input:focus,
 .dados-pedido select:focus {
-    border-color: #b76e79;
+    border-color: var(--cor-principal);
 
     box-shadow:
         0 0 0 3px rgba(183, 110, 121, 0.1);
@@ -911,8 +831,8 @@ footer {
     background:
         linear-gradient(
             90deg,
-            #b76e79,
-            #d4a853
+            var(--cor-principal),
+            var(--cor-dourada)
         );
 
     color: white;
@@ -1198,7 +1118,7 @@ footer .copyright {
 
     font-weight: 800;
 
-    color: #b76e79;
+    color: var(--cor-principal);
 }
 
 .produto .comprar {
@@ -1207,7 +1127,7 @@ footer .copyright {
     background:
         linear-gradient(
             90deg,
-            #b76e79,
+            var(--cor-principal),
             #d28b7f
         );
 
@@ -1285,7 +1205,7 @@ footer .copyright {
 
 .produto-detalhe-card {
     background: white;
-    border: 1px solid #ead7c9;
+    border: 1px solid var(--cor-borda);
     border-radius: 20px;
     padding: 18px;
 
@@ -1308,7 +1228,7 @@ footer .copyright {
     margin-top: 18px;
     margin-bottom: 6px;
 
-    color: #b76e79;
+    color: var(--cor-principal);
 
     font-weight: bold;
 }
@@ -1335,7 +1255,7 @@ footer .copyright {
 .produto-beneficios div {
     background: #fff8f5;
 
-    border: 1px solid #ead7c9;
+    border: 1px solid var(--cor-borda);
 
     border-radius: 14px;
 
@@ -1434,7 +1354,7 @@ footer .copyright {
 }
 
 .checkout-cabecalho span {
-    color: #b76e79;
+    color: var(--cor-principal);
     font-weight: bold;
     font-size: 14px;
 }
@@ -1460,7 +1380,7 @@ footer .copyright {
 .checkout-produtos .item-carrinho {
     border-radius: 18px;
     padding: 14px;
-    border: 1px solid #ead7c9;
+    border: 1px solid var(--cor-borda);
 
     box-shadow:
         0 4px 15px rgba(70, 40, 35, 0.07);
@@ -1494,9 +1414,9 @@ footer .copyright {
 }
 
 .checkout-produtos .quantidade-carrinho button {
-    border: 1px solid #d4a853;
+    border: 1px solid var(--cor-dourada);
 
-    background: #fffaf8;
+    background: var(--cor-fundo);
 
     color: #9b5c51;
 
@@ -1540,10 +1460,10 @@ footer .copyright {
         linear-gradient(
             135deg,
             #fff4ef,
-            #fffaf8
+            var(--cor-fundo)
         );
 
-    border: 1px solid #ead7c9;
+    border: 1px solid var(--cor-borda);
 
     border-radius: 18px;
 
@@ -1568,7 +1488,7 @@ footer .copyright {
 .checkout-resumo #total-carrinho {
     margin: 0;
 
-    color: #b76e79;
+    color: var(--cor-principal);
 
     font-size: 27px;
 }
