@@ -1,329 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Carrinho - Raquel Presentes</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrinho — Raquel Presentes</title>
+<meta name="description" content="Revise seu pedido e finalize direto pelo WhatsApp na Raquel Presentes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-    <img
-        src="Img/logo.png"
-        alt="Raquel Presentes"
-        class="logo"
-    >
+    <div class="cabecalho-linha">
+        <a href="index.html" class="marca">
+            <span class="marca-nome">Raquel Presentes</span>
+        </a>
+    </div>
 </header>
 
-
 <nav class="menu">
-
-    <a href="index.html">
-        Início
-    </a>
-
-    <a href="index.html#produtos">
-        Produtos
-    </a>
-
-    <a href="carrinho.html">
-        Carrinho 🛒
-        (<span id="contador-carrinho">0</span>)
-    </a>
-
+    <div class="menu-lista">
+        <a href="index.html">Início</a>
+        <a href="index.html#produtos">Produtos</a>
+        <a href="carrinho.html" class="menu-carrinho">
+            Carrinho
+            <span class="contador-carrinho" id="contador-carrinho">0</span>
+        </a>
+    </div>
 </nav>
 
-
-<section class="pagina-carrinho">
-
-    <!-- TÍTULO -->
+<main class="pagina-carrinho">
 
     <div class="checkout-cabecalho">
-
-        <span>
-            ❤️ Raquel Presentes
-        </span>
-
-        <h1>
-            Seu carrinho 🛒
-        </h1>
-
-        <p>
-            Confira seus produtos e finalize seu pedido.
-        </p>
-
+        <span>Seu pedido</span>
+        <h1>Carrinho</h1>
+        <p>Revise os itens e finalize pelo WhatsApp.</p>
     </div>
 
-
-    <!-- PRODUTOS DO CARRINHO -->
-
-    <div
-        id="lista-carrinho"
-        class="checkout-produtos"
-    ></div>
-
-
-    <!-- RESUMO -->
+    <div class="checkout-produtos" id="lista-carrinho"></div>
 
     <div class="checkout-resumo">
-
-        <span>
-            Total do pedido
-        </span>
-
-        <h2 id="total-carrinho">
-            Total: R$ 0,00
-        </h2>
-
+        <span>Total</span>
+        <p id="total-carrinho">Total: R$ 0,00</p>
     </div>
 
-
-    <!-- DADOS DO PEDIDO -->
-
-    <div
-        id="dados-pedido"
-        class="dados-pedido checkout-dados"
-    >
+    <div class="checkout-dados" id="dados-pedido" style="display:none;">
 
         <div class="checkout-titulo">
-
-            <span>
-                📋
-            </span>
-
             <div>
-                <h2>
-                    Dados do pedido
-                </h2>
-
-                <p>
-                    Preencha as informações para finalizar.
-                </p>
+                <h2>Dados do pedido</h2>
+                <p>Preencha pra gente combinar a entrega.</p>
             </div>
-
         </div>
 
+        <label for="cliente-nome">Nome</label>
+        <input type="text" id="cliente-nome" placeholder="Seu nome completo">
 
-        <!-- NOME -->
-
-        <label for="cliente-nome">
-            Seu nome
-        </label>
-
-        <input
-            type="text"
-            id="cliente-nome"
-            placeholder="Digite seu nome"
-        >
-
-
-        <!-- RECEBIMENTO -->
-
-        <label for="tipo-entrega">
-            Como deseja receber?
-        </label>
-
+        <label for="tipo-entrega">Recebimento</label>
         <select id="tipo-entrega">
-
-            <option value="">
-                Selecione
-            </option>
-
-            <option value="Retirada">
-                🏪 Retirada
-            </option>
-
-            <option value="Entrega">
-                🚚 Entrega
-            </option>
-
+            <option value="">Selecione</option>
+            <option value="Entrega">Entrega</option>
+            <option value="Retirada">Retirada</option>
         </select>
 
+        <div class="checkout-opcao-extra" id="dados-entrega" style="display:none;">
+            <label for="cliente-endereco">Endereço</label>
+            <input type="text" id="cliente-endereco" placeholder="Rua, número, bairro">
 
-        <!-- ENDEREÇO -->
-
-        <div
-            id="dados-entrega"
-            class="checkout-opcao-extra"
-            style="display: none;"
-        >
-
-            <div class="checkout-aviso">
-                🚚 Informe onde o pedido será entregue.
-            </div>
-
-
-            <label for="cliente-endereco">
-                Endereço
-            </label>
-
-            <input
-                type="text"
-                id="cliente-endereco"
-                placeholder="Rua, número e bairro"
-            >
-
-
-            <label for="cliente-cidade">
-                Cidade
-            </label>
-
-            <input
-                type="text"
-                id="cliente-cidade"
-                placeholder="Digite sua cidade"
-            >
-
+            <label for="cliente-cidade">Cidade</label>
+            <input type="text" id="cliente-cidade" placeholder="Sua cidade">
         </div>
 
-
-        <!-- PAGAMENTO -->
-
-        <label for="forma-pagamento">
-            Forma de pagamento
-        </label>
-
+        <label for="forma-pagamento">Pagamento</label>
         <select id="forma-pagamento">
-
-            <option value="">
-                Selecione
-            </option>
-
-            <option value="Pix">
-                💠 Pix
-            </option>
-
-            <option value="Dinheiro">
-                💵 Dinheiro
-            </option>
-
-            <option value="Cartão">
-                💳 Cartão
-            </option>
-
+            <option value="">Selecione</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão">Cartão</option>
+            <option value="Pix">Pix</option>
         </select>
 
-
-        <!-- TROCO -->
-
-        <div
-            id="dados-troco"
-            class="checkout-opcao-extra"
-            style="display: none;"
-        >
-
-            <div class="checkout-aviso">
-                💵 Informações para pagamento em dinheiro.
-            </div>
-
-
-            <label for="precisa-troco">
-                Precisa de troco?
-            </label>
-
+        <div class="checkout-opcao-extra" id="dados-troco" style="display:none;">
+            <label for="precisa-troco">Precisa de troco?</label>
             <select id="precisa-troco">
-
-                <option value="">
-                    Selecione
-                </option>
-
-                <option value="Não">
-                    Não
-                </option>
-
-                <option value="Sim">
-                    Sim
-                </option>
-
+                <option value="">Selecione</option>
+                <option value="Sim">Sim</option>
+                <option value="Não">Não</option>
             </select>
 
-
-            <div
-                id="area-valor-troco"
-                style="display: none;"
-            >
-
-                <label for="valor-troco">
-                    Troco para quanto?
-                </label>
-
-                <input
-                    type="number"
-                    id="valor-troco"
-                    placeholder="Ex: 100"
-                    min="0"
-                    step="0.01"
-                >
-
+            <div id="area-valor-troco" style="display:none;">
+                <label for="valor-troco">Troco para quanto?</label>
+                <input type="text" id="valor-troco" placeholder="Ex: 100">
             </div>
+        </div>
 
+        <div class="checkout-finalizar">
+            <a
+                href="#"
+                id="finalizar-whatsapp"
+                class="btn-whatsapp checkout-whatsapp"
+                onclick="finalizarPedido(event)"
+            >
+                <svg class="icone-mensagem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20L5.3 15.8C4.5 14.4 4 12.8 4 11C4 6.6 7.6 3 12 3C16.4 3 20 6.6 20 11C20 15.4 16.4 19 12 19C10.4 19 8.9 18.5 7.6 17.7L4 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                Finalizar pedido pelo WhatsApp
+            </a>
+            <p>Você vai revisar o pedido no WhatsApp antes de confirmar.</p>
         </div>
 
     </div>
 
-
-    <!-- FINALIZAR -->
-
-    <div class="checkout-finalizar">
-
-        <a
-            href="#"
-            id="finalizar-whatsapp"
-            class="btn-whatsapp checkout-whatsapp"
-            onclick="finalizarPedido(event)"
-        >
-            💬 Finalizar pedido pelo WhatsApp
-        </a>
-
-        <p>
-            Você será direcionado ao WhatsApp
-            com os dados do pedido preenchidos.
-        </p>
-
-    </div>
-
-
-    <a
-        href="index.html#produtos"
-        class="voltar-loja"
-    >
-        ← Continuar comprando
-    </a>
-
-</section>
-
+</main>
 
 <footer>
-
-    <h3>
-        Raquel Presentes
-    </h3>
-
-    <p>
-        Seja sua melhor versão ❤️
-    </p>
-
-    <a
-        href="https://wa.me/5518997644881"
-        target="_blank"
-    >
-        Fale conosco pelo WhatsApp
-    </a>
-
-    <p class="copyright">
-        © 2026 Raquel Presentes
-    </p>
-
+    <div class="rodape-linha">
+        <h3>Raquel Presentes</h3>
+        <p>Dúvidas sobre algum produto? Chama a gente.</p>
+        <a href="https://wa.me/5518997644881" class="btn-whatsapp">
+            <svg class="icone-mensagem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20L5.3 15.8C4.5 14.4 4 12.8 4 11C4 6.6 7.6 3 12 3C16.4 3 20 6.6 20 11C20 15.4 16.4 19 12 19C10.4 19 8.9 18.5 7.6 17.7L4 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Falar no WhatsApp
+        </a>
+        <p class="copyright">© 2026 Raquel Presentes</p>
+    </div>
 </footer>
 
-
 <script src="scripts.js"></script>
-
 </body>
-
 </html>

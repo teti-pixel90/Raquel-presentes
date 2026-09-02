@@ -20,7 +20,7 @@ const produtosLoja = {
         categoria: "roupas",
 
         descricao:
-            "Camisa Polo disponível na Raquel Presentes.",
+            "Polo em piquet de algodão, corte reto e gola canelada. Boa pedida pra quem quer um presente que sirva pro dia a dia e também pra sair.",
 
         disponivel: true,
         destaque: true,
@@ -40,7 +40,7 @@ const produtosLoja = {
         categoria: "bones",
 
         descricao:
-            "Boné Casual disponível na Raquel Presentes.",
+            "Boné de aba curva com regulagem por fivela, tamanho único. Presente rápido de acertar — combina com praticamente qualquer estilo.",
 
         disponivel: true,
         destaque: true,
@@ -60,7 +60,7 @@ const produtosLoja = {
         categoria: "brinquedos",
 
         descricao:
-            "Carrinho Infantil disponível na Raquel Presentes.",
+            "Carrinho em miniatura com rodas soltas e acabamento resistente, indicado a partir dos 3 anos. Um clássico que raramente decepciona.",
 
         disponivel: true,
         destaque: false
@@ -74,7 +74,7 @@ const produtosLoja = {
         categoria: "eletronicos",
 
         descricao:
-            "Fone Bluetooth disponível na Raquel Presentes.",
+            "Fone sem fio com bateria de longa duração e conexão automática por Bluetooth. Ótimo presente pra quem vive no celular ou no trabalho remoto.",
 
         disponivel: true,
         destaque: false,
@@ -225,7 +225,7 @@ function carregarProdutosInicio() {
 
             seloHTML = `
                 <span class="selo-disponivel selo-destaque">
-                    ⭐ Destaque
+                    Destaque
                 </span>
             `;
 
@@ -257,11 +257,16 @@ function carregarProdutosInicio() {
                 ? ""
                 : " produto-esgotado";
 
+        const classeDestaque =
+            produto.destaque
+                ? " produto-destaque"
+                : "";
+
 
         lista.innerHTML += `
 
             <div
-                class="produto${classeEsgotado}"
+                class="produto${classeEsgotado}${classeDestaque}"
                 data-categoria="${produto.categoria}"
             >
 
@@ -277,29 +282,33 @@ function carregarProdutosInicio() {
                 </div>
 
 
-                <h3>
-                    ${produto.nome}
-                </h3>
+                <div class="produto-corpo">
+
+                    <h3>
+                        ${produto.nome}
+                    </h3>
 
 
-                <p class="produto-categoria">
-                    ${categoriaNome}
-                </p>
+                    <p class="produto-categoria">
+                        ${categoriaNome}
+                    </p>
 
 
-                ${precoHTML}
+                    ${precoHTML}
 
 
-                <a
-                    href="produto.html?id=${id}"
-                    class="comprar"
-                >
-                    ${
-                        disponivel
-                            ? "Ver produto"
-                            : "Ver produto esgotado"
-                    }
-                </a>
+                    <a
+                        href="produto.html?id=${id}"
+                        class="comprar"
+                    >
+                        ${
+                            disponivel
+                                ? "Ver produto"
+                                : "Ver produto esgotado"
+                        }
+                    </a>
+
+                </div>
 
             </div>
 
@@ -321,6 +330,18 @@ function filtrarProdutos(categoria) {
 
     categoriaAtual =
         categoria;
+
+
+    document.querySelectorAll(
+        ".categorias button"
+    ).forEach(botao => {
+
+        botao.classList.toggle(
+            "categoria-ativa",
+            botao.dataset.categoria === categoria
+        );
+
+    });
 
 
     aplicarFiltrosProdutos();
@@ -559,7 +580,7 @@ function configurarStatusProduto(produto) {
         } else if (produto.destaque) {
 
             selo.innerText =
-                "⭐ Destaque";
+                "Destaque";
 
             selo.classList.add(
                 "selo-destaque"
@@ -598,7 +619,7 @@ function configurarStatusProduto(produto) {
             false;
 
         botaoCarrinho.innerText =
-            "🛒 Adicionar ao carrinho";
+            "Adicionar ao carrinho";
 
         botaoCarrinho.classList.remove(
             "btn-esgotado"
