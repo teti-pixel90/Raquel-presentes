@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin — Raquel Presentes</title>
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<header>
+    <div class="cabecalho-linha">
+
+        <a href="index.html" class="marca">
+            <span class="marca-nome">
+                Raquel Presentes
+            </span>
+        </a>
+
+        <span class="marca-linha">
+            painel administrativo
+        </span>
+
+    </div>
+</header>
+
+
+<!-- ===================================================
+    TELA DE LOGIN
+=================================================== -->
+
+<main id="tela-login" class="admin-login">
+
+    <h1>Entrar</h1>
+
+    <p>
+        Acesso restrito. Use o email e senha cadastrados no Supabase.
+    </p>
+
+    <form id="form-login">
+
+        <label for="login-email">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="login-email"
+            required
+            autocomplete="username"
+        >
+
+        <label for="login-senha">
+            Senha
+        </label>
+
+        <input
+            type="password"
+            id="login-senha"
+            required
+            autocomplete="current-password"
+        >
+
+        <button
+            type="submit"
+            class="banner-botao"
+        >
+            Entrar
+        </button>
+
+        <p
+            id="login-erro"
+            class="admin-erro"
+        ></p>
+
+    </form>
+
+</main>
+
+
+<!-- ===================================================
+    PAINEL
+=================================================== -->
+
+<main
+    id="tela-painel"
+    class="admin-painel"
+    style="display: none;"
+>
+
+    <div class="admin-topo">
+
+        <div>
+
+            <h1>Produtos</h1>
+
+            <p id="admin-usuario"></p>
+
+        </div>
+
+        <button
+            id="btn-sair"
+            class="admin-botao-secundario"
+        >
+            Sair
+        </button>
+
+    </div>
+
+
+    <!-- ===================================================
+        FORMULÁRIO
+    =================================================== -->
+
+    <section class="admin-formulario">
+
+        <h2 id="form-titulo">
+            Novo produto
+        </h2>
+
+        <input
+            type="hidden"
+            id="produto-id-edicao"
+        >
+
+
+        <!-- NOME -->
+
+        <label for="f-nome">
+            Nome
+        </label>
+
+        <input
+            type="text"
+            id="f-nome"
+            required
+        >
+
+
+        <!-- PREÇO + CATEGORIA -->
+
+        <div class="admin-linha-dupla">
+
+            <div>
+
+                <label for="f-preco">
+                    Preço (ex: 59.90)
+                </label>
+
+                <input
+                    type="number"
+                    step="0.01"
+                    id="f-preco"
+                    required
+                >
+
+            </div>
+
+            <div>
+
+                <label for="f-categoria">
+                    Categoria
+                </label>
+
+                <select
+                    id="f-categoria"
+                    required
+                >
+
+                    <option value="roupas">
+                        Roupas
+                    </option>
+
+                    <option value="bones">
+                        Bonés
+                    </option>
+
+                    <option value="brinquedos">
+                        Brinquedos
+                    </option>
+
+                    <option value="eletronicos">
+                        Eletrônicos
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================================
+            ESTOQUE POR COR E TAMANHO
+        =================================================== -->
+
+        <div
+            id="bloco-estoque"
+            style="display: none;"
+        >
+
+            <label>
+                Estoque por cor e tamanho
+            </label>
+
+
+            <!--
+                O JavaScript vai adicionar novas cores
+                dentro desta área
+            -->
+
+            <div id="lista-cores">
+
+                <div class="grupo-cor">
+
+                    <label for="estoque-cor">
+                        Cor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="estoque-cor"
+                        class="estoque-cor"
+                        placeholder="Ex: Preto"
+                    >
+
+
+                    <div class="admin-linha-dupla">
+
+                        <div>
+
+                            <label for="estoque-p">
+                                P
+                            </label>
+
+                            <input
+                                type="number"
+                                id="estoque-p"
+                                class="estoque-p"
+                                min="0"
+                                value="0"
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="estoque-m">
+                                M
+                            </label>
+
+                            <input
+                                type="number"
+                                id="estoque-m"
+                                class="estoque-m"
+                                min="0"
+                                value="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="admin-linha-dupla">
+
+                        <div>
+
+                            <label for="estoque-g">
+                                G
+                            </label>
+
+                            <input
+                                type="number"
+                                id="estoque-g"
+                                class="estoque-g"
+                                min="0"
+                                value="0"
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="estoque-gg">
+                                GG
+                            </label>
+
+                            <input
+                                type="number"
+                                id="estoque-gg"
+                                class="estoque-gg"
+                                min="0"
+                                value="0"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="btn-adicionar-cor"
+                class="admin-botao-secundario"
+            >
+                + Adicionar outra cor
+            </button>
+
+        </div>
+
+
+        <!-- ===================================================
+            IMAGEM
+        =================================================== -->
+
+        <label for="f-imagem-arquivo">
+            Foto do produto
+        </label>
+
+        <input
+            type="file"
+            id="f-imagem-arquivo"
+            accept="image/*"
+        >
+
+        <p class="admin-ajuda">
+            Escolha uma imagem JPG, PNG, WEBP ou outro formato de imagem.
+            Máximo recomendado: 5 MB.
+        </p>
+
+        <input
+            type="hidden"
+            id="f-imagem-atual"
+        >
+
+
+        <div
+            id="admin-preview-imagem"
+            class="admin-preview-imagem"
+            style="display: none;"
+        >
+
+            <img
+                id="admin-preview-img"
+                src=""
+                alt="Prévia da foto do produto"
+            >
+
+            <div class="admin-preview-info">
+
+                <span id="admin-preview-texto"></span>
+
+                <button
+                    type="button"
+                    id="btn-remover-imagem"
+                    style="display: none;"
+                >
+                    🗑 Remover foto
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===================================================
+            DESCRIÇÃO
+        =================================================== -->
+
+        <label for="f-descricao">
+            Descrição
+        </label>
+
+        <textarea
+            id="f-descricao"
+            rows="3"
+            required
+        ></textarea>
+
+
+        <!-- ===================================================
+            DISPONIBILIDADE + DESTAQUE
+        =================================================== -->
+
+        <div class="admin-linha-dupla">
+
+            <label class="admin-checkbox">
+
+                <input
+                    type="checkbox"
+                    id="f-disponivel"
+                    checked
+                >
+
+                Disponível
+
+            </label>
+
+
+            <label class="admin-checkbox">
+
+                <input
+                    type="checkbox"
+                    id="f-destaque"
+                >
+
+                Destaque (aparece maior na loja)
+
+            </label>
+
+        </div>
+
+
+        <!-- ===================================================
+            BOTÕES
+        =================================================== -->
+
+        <div class="admin-botoes-form">
+
+            <button
+                id="btn-salvar"
+                class="banner-botao"
+            >
+                Salvar produto
+            </button>
+
+            <button
+                id="btn-cancelar-edicao"
+                class="admin-botao-secundario"
+                style="display: none;"
+            >
+                Cancelar edição
+            </button>
+
+        </div>
+
+
+        <p id="admin-status"></p>
+
+    </section>
+
+
+    <!-- ===================================================
+        PRODUTOS CADASTRADOS
+    =================================================== -->
+
+    <section>
+
+        <h2>
+            Produtos cadastrados
+        </h2>
+
+        <div id="admin-lista"></div>
+
+    </section>
+
+</main>
+
+
+<!-- ===================================================
+    SCRIPTS
+=================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="admin.js"></script>
+
+</body>
+
+</html>

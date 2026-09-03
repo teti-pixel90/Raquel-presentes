@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produto — Raquel Presentes</title>
+<meta name="description" content="Detalhes do produto, cor, tamanho e pedido direto pelo WhatsApp na Raquel Presentes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="cabecalho-linha">
+        <a href="index.html" class="marca">
+            <span class="marca-nome">Raquel Presentes</span>
+        </a>
+    </div>
+</header>
+
+<nav class="menu">
+    <div class="menu-lista">
+        <a href="index.html">Início</a>
+        <a href="index.html#produtos">Produtos</a>
+        <a href="carrinho.html" class="menu-carrinho">
+            Carrinho
+            <span class="contador-carrinho" id="contador-carrinho">0</span>
+        </a>
+    </div>
+</nav>
+
+<main class="pagina-produto">
+
+    <a href="index.html" class="voltar-loja">← Voltar ao catálogo</a>
+
+    <div class="produto-detalhe-card">
+
+        <div class="produto-detalhe-imagem">
+            <span class="selo-disponivel produto-selo-detalhe"></span>
+            <img id="produto-imagem" class="foto-produto" src="" alt="">
+        </div>
+
+        <div>
+            <span class="produto-marca">Raquel Presentes</span>
+            <h1 id="produto-nome"></h1>
+            <p id="produto-preco" class="preco produto-preco-detalhe"></p>
+            <p id="produto-descricao" class="descricao"></p>
+
+
+<!-- ================================
+    COR 
+=====================================-->
+<div class="opcao-produto" id="area-cor" style="display:none;">
+    <label>Cor</label>
+
+    <!-- O JavaScript vai colocar os botões aqui -->
+    <div id="produto-cor" class="opcoes-botoes"></div>
+</div>
+
+<!-- TAMANHO -->
+<div class="opcao-produto" id="area-tamanho" style="display:none;">
+    <label>Tamanho</label>
+
+    <!-- O JavaScript vai colocar os botões aqui -->
+    <div id="produto-tamanho" class="opcoes-botoes"></div>
+</div>
+
+            <button id="adicionar-carrinho" class="btn-carrinho" onclick="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+
+            <a id="produto-whatsapp" href="#" class="btn-whatsapp">
+                <svg class="icone-mensagem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20L5.3 15.8C4.5 14.4 4 12.8 4 11C4 6.6 7.6 3 12 3C16.4 3 20 6.6 20 11C20 15.4 16.4 19 12 19C10.4 19 8.9 18.5 7.6 17.7L4 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                Perguntar no WhatsApp
+            </a>
+
+            <div class="produto-beneficios">
+                <div>
+                    <p>Combine entrega ou retirada depois de fechar o pedido.</p>
+                </div>
+                <div>
+                    <p>Pagamento em dinheiro, cartão ou o que for melhor pra você.</p>
+                </div>
+                <div>
+                    <p>Dúvida sobre cor ou tamanho? É só chamar antes de comprar.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <div class="rodape-linha">
+        <h3>Raquel Presentes</h3>
+        <p>Dúvidas sobre algum produto? Chama a gente.</p>
+        <a href="https://wa.me/5518997644881" class="btn-whatsapp">
+            <svg class="icone-mensagem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20L5.3 15.8C4.5 14.4 4 12.8 4 11C4 6.6 7.6 3 12 3C16.4 3 20 6.6 20 11C20 15.4 16.4 19 12 19C10.4 19 8.9 18.5 7.6 17.7L4 20Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            Falar no WhatsApp
+        </a>
+        <p class="copyright">© 2026 Raquel Presentes</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="scripts.js"></script>
+</body>
+</html>

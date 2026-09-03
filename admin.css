@@ -1,0 +1,262 @@
+.admin-login {
+    width: 92%;
+    max-width: 360px;
+    margin: 60px auto;
+    text-align: left;
+}
+
+.admin-login p {
+    color: var(--cor-texto-suave);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.admin-login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-login label,
+.admin-formulario label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+.admin-login input,
+.admin-formulario input,
+.admin-formulario select,
+.admin-formulario textarea {
+    padding: 11px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-pequeno);
+    font-family: var(--fonte-corpo);
+    font-size: 15px;
+    outline: none;
+    width: 100%;
+}
+
+.admin-login input:focus,
+.admin-formulario input:focus,
+.admin-formulario select:focus,
+.admin-formulario textarea:focus {
+    border-color: var(--cor-plum);
+}
+
+.admin-login button,
+.admin-formulario button {
+    margin-top: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.admin-erro {
+    color: var(--cor-vermelho);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.admin-painel {
+    width: 92%;
+    max-width: 760px;
+    margin: 40px auto 80px;
+}
+
+.admin-topo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.admin-topo p {
+    color: var(--cor-texto-suave);
+    font-size: 13px;
+}
+
+.admin-botao-secundario {
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    border-radius: var(--raio-pequeno);
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.admin-formulario {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    padding: 20px;
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.admin-formulario h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.admin-linha-dupla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.admin-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500 !important;
+}
+
+.admin-checkbox input {
+    width: auto;
+}
+
+.admin-botoes-form {
+    display: flex;
+    gap: 10px;
+}
+
+#admin-status {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.admin-produto-linha {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    padding: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.admin-produto-linha img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: var(--raio-pequeno);
+    background: #f3ece5;
+}
+
+.admin-produto-info {
+    flex: 1;
+}
+
+.admin-produto-info h3 {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.admin-produto-info p {
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+}
+
+.admin-produto-acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.admin-produto-acoes button {
+    border: 1px solid var(--cor-borda);
+    background: transparent;
+    border-radius: var(--raio-pequeno);
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.admin-produto-acoes .apagar {
+    color: var(--cor-vermelho);
+    border-color: #edcaca;
+}
+
+@media (max-width: 600px) {
+
+    .admin-linha-dupla {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-produto-linha {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* =====================================================
+   UPLOAD / PRÉVIA DE IMAGEM
+===================================================== */
+
+.admin-ajuda {
+    margin: 6px 0 12px;
+    color: #8a716a;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.admin-preview-imagem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 10px 0 18px;
+    padding: 10px;
+    background: #fff9f6;
+    border: 1px solid #ead7c9;
+    border-radius: 12px;
+}
+
+.admin-preview-imagem img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: white;
+}
+
+.admin-preview-imagem span {
+    color: #6f514b;
+    font-size: 13px;
+    text-align: left;
+    word-break: break-word;
+}
+
+/* =====================================================
+   BOTÃO REMOVER IMAGEM
+===================================================== */   
+.admin-preview-imagem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+}
+
+.admin-preview-imagem img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.admin-preview-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+#btn-remover-imagem {
+    width: fit-content;
+    padding: 6px 10px;
+    border: 1px solid #e5a0a0;
+    border-radius: 6px;
+    background: white;
+    color: #c44;
+    cursor: pointer;
+    font-size: 13px;
+}
