@@ -221,11 +221,35 @@ header {
     height: 320px;
 }
 
-.banner-vitrine img {
+.banner-vitrine-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--raio-medio);
+    text-decoration: none;
+}
+
+.banner-vitrine-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: var(--raio-medio);
+    transition: transform 0.2s ease;
+}
+
+.banner-vitrine-item:hover img {
+    transform: scale(1.04);
+}
+
+.banner-vitrine-legenda {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(43, 35, 32, 0.75), transparent);
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 20px 10px 8px;
 }
 
 .banner-vitrine-principal {
